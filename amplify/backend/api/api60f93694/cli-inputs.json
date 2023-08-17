@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "paths": {
+    "/customers/{customerId}": {
+      "name": "/customers/{customerId}",
+      "lambdaFunction": "CustomerHandler",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/getUserStocks/{username}": {
+      "name": "/getUserStocks/{username}",
+      "lambdaFunction": "getUserStocks",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/postUserStocks/{username}": {
+      "name": "/postUserStocks/{username}",
+      "lambdaFunction": "postUserStocks",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "resourceName": "portfolio",
+  "tableName": "portfolio",
+  "partitionKey": {
+    "fieldName": "username",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

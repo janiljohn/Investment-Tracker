@@ -1,0 +1,137 @@
+{
+  "api": {
+    "api60f93694": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "CustomerHandler"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getUserStocks"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "postUserStocks"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "stocktracker5512fbff": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "CustomerHandler": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getUserStocks": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "postUserStocks": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "hosting": {},
+  "parameters": {
+    "AMPLIFY_function_CustomerHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CustomerHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_CustomerHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CustomerHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_getUserStocks_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getUserStocks"
+        }
+      ]
+    },
+    "AMPLIFY_function_getUserStocks_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getUserStocks"
+        }
+      ]
+    },
+    "AMPLIFY_function_postUserStocks_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "postUserStocks"
+        }
+      ]
+    },
+    "AMPLIFY_function_postUserStocks_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "postUserStocks"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "portfolio": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}
